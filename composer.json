@@ -1,0 +1,15 @@
+{
+    "name": "wesleywillians/laravel-pagseguro",
+    "description": "Laravel 5 ServiceProvider for Pagseguro Library from PHPSC",
+    "require": {
+        "phpsc/pagseguro": "dev-master"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Wesley Willians",
+            "email": "wesleywillians@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
