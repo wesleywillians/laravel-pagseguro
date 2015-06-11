@@ -11,5 +11,10 @@
             "email": "wesleywillians@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+          "LaravelPagseguro\\": "wesleywillians/laravel-pagseguro/src/"
+        }
+    },
     "minimum-stability": "dev"
 }
