@@ -2,7 +2,7 @@
     "name": "wesleywillians/laravel-pagseguro",
     "description": "Laravel 5 ServiceProvider for Pagseguro Library from PHPSC",
     "require": {
-        "phpsc/pagseguro": "1.0.*"
+        "phpsc/pagseguro": "dev"
     },
     "license": "MIT",
     "authors": [
