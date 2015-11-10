@@ -55,6 +55,33 @@ class PagseguroController extends Controller
 }
 ````
 
+## Exemplo de notificação
+
+```php
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Http\Requests;
+use PHPSC\PagSeguro\Purchases\Subscriptions\Locator as SubscriptionLocator;
+use PHPSC\PagSeguro\Purchases\Transactions\Locator as TransactionLocator;
 
 
-    
+class PagseguroController extends Controller
+{
+    public function index(SubscriptionLocator $subscription, TransactionLocator $transaction)
+    {
+        try {
+            $data = $request->all();
+
+            $service = $data['notificationType'] == 'preApproval' ? $subscription : $transaction; // Cria instância do serviço de acordo com o tipo da notificação
+
+            $purchase = $service->getByNotification($data['notificationCode']);
+
+            return $purchase; // Exibe na tela a transação ou assinatura atualizada
+        } catch (Exception $error) { // Caso ocorreu algum erro
+            return $error->getMessage(); // Exibe na tela a mensagem de erro
+        }
+    }
+}
+````
