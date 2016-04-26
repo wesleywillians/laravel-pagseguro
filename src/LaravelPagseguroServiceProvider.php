@@ -38,5 +38,13 @@ class LaravelPagseguroServiceProvider extends ServiceProvider
         $this->app->bind('PHPSC\PagSeguro\Requests\Checkout\CheckoutService', function () {
             return new CheckoutService($this->app->make('PHPSC\PagSeguro\Credentials'));
         });
+
+        $this->app->bind('PHPSC\PagSeguro\Purchases\Subscriptions\Locator', function () {
+            return new SubscriptionLocator($this->app->make('PHPSC\PagSeguro\Credentials'));
+        });
+
+        $this->app->bind('PHPSC\PagSeguro\Purchases\Transactions\Locator', function () {
+            return new TransactionLocator($this->app->make('PHPSC\PagSeguro\Credentials'));
+        });
     }
 }
